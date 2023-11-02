@@ -172,17 +172,24 @@ export default {
       //   this.$message.warning("请按xxxx-xx-xx xx:xx:xx的格式输入时间");
       // } else {
       this.dialogFormVisible = false;
-      // const end = this.form.end;
-      const startdate = new Date(this.form.start_time).toISOString();
-      const enddate = new Date(this.form.end_time).toISOString();
-      const start = String(startdate).split(".");
-      const end = String(enddate).split(".");
 
-      let arr = [];
-      arr = start[0].split("T");
-      this.form.start_time = arr[0] + " " + arr[1];
-      arr = end[0].split("T");
-      this.form.end_time = arr[0] + " " + arr[1];
+      const startdate = new Date(this.form.start_time).toLocaleString();
+      const enddate = new Date(this.form.end_time).toLocaleString();
+      const start = startdate.split(" ");
+      this.form.start_time =
+        start[0].split("/").reduce((startDate, item) => {
+          return (startDate += "-" + item.padStart(2, "0"));
+        }) +
+        " " +
+        start[1];
+
+      const end = enddate.split(" ");
+      this.form.end_time =
+        end[0].split("/").reduce((endDate, item) => {
+          return (endDate += "-" + item.padStart(2, "0"));
+        }) +
+        " " +
+        end[1];
 
       const newNuitdata = {
         title: this.form.unit_name,

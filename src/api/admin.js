@@ -15,6 +15,7 @@ export const newNuit = (data) => {
       startTime: data.start,
       endTime: data.end,
       unitDescription: data.description,
+      totalScore:0
     },
   });
 };
