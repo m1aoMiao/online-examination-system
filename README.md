@@ -2,3 +2,4 @@
 ###课题要求：要求所开发的系统具有教师和学生两类用户。各类用户都要进行登录认证。教师可以进行填空、选择、判断等客观类型题目、答案及分值的设定，可以查看所有学生的成绩历史及错题统计情况，其中学生成绩由系统自动批阅给出；学生可以在指定时间内答题并查询自己的答题详情历史和成绩历史。数据库设计要充分考虑完整性、一致性等约束；用户界面要简捷友好。# online-examination-system
 # online-examination-system
 # online-examination-system
+# online-examination-system
